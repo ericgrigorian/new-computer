@@ -223,6 +223,7 @@ dockutil --add '' --type spacer --section apps
 dockutil --add /Applications/Webstorm.app
 dockutil --add /Applications/Goland.app
 dockutil --add /Applications/Atom.app
+dockutil --add /Applications/Utilities/Terminal.app
 dockutil --add '' --type spacer --section apps
 dockutil --add /Applications/Franz.app
 dockutil --add /Applications/Fantastical.app
