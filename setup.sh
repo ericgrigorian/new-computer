@@ -198,11 +198,12 @@ osascript -e 'tell application "System Preferences" to quit'
 # Dock: remove useless apps from dock
 dockutil --remove 'Launchpad' --allhomes
 dockutil --remove 'Mail' --allhomes
-dockutil --remove 'Facetime' --allhomes
+dockutil --remove 'Safari' --allhomes
+dockutil --remove 'FaceTime' --allhomes
 dockutil --remove 'Messages' --allhomes
 dockutil --remove 'Maps' --allhomes
 dockutil --remove 'Photos' --allhomes
-dockutil --remove 'Contact' --allhomes
+dockutil --remove 'Contacts' --allhomes
 dockutil --remove 'Calendar' --allhomes
 dockutil --remove 'Reminders' --allhomes
 dockutil --remove 'Notes' --allhomes
@@ -212,6 +213,19 @@ dockutil --remove 'TV' --allhomes
 dockutil --remove 'News' --allhomes
 dockutil --remove 'App Store' --allhomes
 dockutil --remove 'System Preferences' --allhomes
+
+# Dock: add apps to dock
+dockutil --add '' --type spacer --section apps
+dockutil --add /Applications/Google Chrome.app
+dockutil --add /Applications/Firefox.app
+dockutil --add /Applications/Safari.app
+dockutil --add '' --type spacer --section apps
+dockutil --add /Applications/Webstorm.app
+dockutil --add /Applications/Goland.app
+dockutil --add /Applications/Atom.app
+dockutil --add '' --type spacer --section apps
+dockutil --add /Applications/Franz.app
+dockutil --add /Applications/Fantastical.app
 
 # Keep folders on top when sorting by name
 defaults write com.apple.finder _FXSortFoldersFirst -bool true
