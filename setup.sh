@@ -142,7 +142,9 @@ brew cask install rectangle  # window manager
 
 ### Development
 brew cask install docker
+brew install python
 brew install node
+brew install yarn
 brew install go
 brew cask install virtualbox
 brew cask install vagrant
@@ -155,9 +157,6 @@ brew install tree
 brew link curl --force
 brew install trash  # move to osx trash instead of rm
 brew install less
-
-### Python
-brew install python
 
 ### Dev Editors 
 brew cask install atom
