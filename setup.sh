@@ -6,19 +6,6 @@
 #| (_) \__ \>  <    | | | | \__ \ || (_| | | |
 # \___/|___/_/\_\   |_|_| |_|___/\__\__,_|_|_|
 
-
-echo "I  ❤️  🍎"
-echo "Mac OS Install Setup Script"
-echo "By Nina Zakharenko"
-echo "Follow me on twitter! https://twitter.com/nnja"
-
-# Some configs reused from:
-# https://github.com/ruyadorno/installme-osx/
-# https://gist.github.com/millermedeiros/6615994
-# https://gist.github.com/brandonb927/3195465/
-
-# Colorize
-
 # Set the colours you can use
 black=$(tput setaf 0)
 red=$(tput setaf 1)
@@ -39,16 +26,6 @@ cecho() {
   echo "${2}${1}${reset}"
   return
 }
-
-echo ""
-cecho "###############################################" $red
-cecho "#        DO NOT RUN THIS SCRIPT BLINDLY       #" $red
-cecho "#         YOU'LL PROBABLY REGRET IT...        #" $red
-cecho "#                                             #" $red
-cecho "#              READ IT THOROUGHLY             #" $red
-cecho "#         AND EDIT TO SUIT YOUR NEEDS         #" $red
-cecho "###############################################" $red
-echo ""
 
 # Set continue to false by default.
 CONTINUE=false
@@ -236,11 +213,6 @@ dockutil --remove 'News' --allhomes
 dockutil --remove 'App Store' --allhomes
 dockutil --remove 'System Preferences' --allhomes
 
-# Dock: add important apps to dock
-
-# Finder: allow quitting via ⌘ + Q; doing so will also hide desktop icons
-defaults write com.apple.finder QuitMenuItem -bool true
-
 # Keep folders on top when sorting by name
 defaults write com.apple.finder _FXSortFoldersFirst -bool true
 
@@ -318,28 +290,11 @@ defaults write com.apple.screencapture disable-shadow -bool true
 defaults write com.apple.TextEdit RichText -int 0
 
 ###############################################################################
-# Spotlight                                                                   #
-###############################################################################
-
-# Hide Spotlight tray-icon (and subsequent helper)
-#sudo chmod 600 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search
-# Disable Spotlight indexing for any volume that gets mounted and has not yet
-# been indexed before.
-# Use `sudo mdutil -i off "/Volumes/foo"` to stop indexing any volume.
-sudo defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Volumes"
-# Load new settings before rebuilding the index
-killall mds
-
-###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
 ###############################################################################
 
-# Disable “natural” (Lion-style) scrolling
-# Uncomment if you don't use scroll reverser
-# defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
-
 # Stop iTunes from responding to the keyboard media keys
-#launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null
+launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null
 
 ###############################################################################
 # Mac App Store                                                               #
