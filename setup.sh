@@ -257,7 +257,7 @@ defaults write com.apple.dock minimize-to-application -bool true
 defaults write com.apple.dock autohide -bool true
 
 # Don’t show recent applications in Dock
-#    defaults write com.apple.dock show-recents -bool false
+defaults write com.apple.dock show-recents -bool false
 
 # Menu bar: hide the Time Machine, User icons, but show the volume Icon.
 for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
